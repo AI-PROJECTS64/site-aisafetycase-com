@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AISafetyCase.com - Concept Note</title>
+  <meta name="description" content="Concept Note - AISafetyCase.com. A neutral, descriptive framing of AI safety cases: evidence-backed arguments (claims, arguments, evidence) supporting high-risk and frontier AI deployment decisions." />
+
+  <link rel="canonical" href="https://www.aisafetycase.com/concept-note.html" />
+  <link rel="alternate" href="https://www.aisafetycase.com/concept-note.html" hreflang="en" />
+  <link rel="alternate" href="https://www.aisafetycase.com/concept-note.html" hreflang="fr" />
+
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="AISafetyCase.com - Concept Note" />
+  <meta property="og:description" content="A neutral, descriptive framing of AI safety cases for high-risk and frontier AI deployment decisions." />
+  <meta property="og:url" content="https://www.aisafetycase.com/concept-note.html" />
+  <meta property="og:image" content="https://www.aisafetycase.com/og.jpg" />
+  <meta property="og:image:alt" content="AISafetyCase.com - Concept Note" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.aisafetycase.com/og.jpg" />
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#0f1730;
+      --text:#e8eefc;
+      --muted:#a9b7d6;
+      --accent:#56d7ff;
+      --chip:#111c38;
+      --shadow:0 18px 45px rgba(0,0,0,.35);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      background:var(--bg);
+      color:var(--text);
+      font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{
+      max-width:1040px;
+      margin:0 auto;
+      padding:28px 20px 36px;
+    }
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+      flex-wrap:wrap;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:var(--chip);
+      border:1px solid #1d2946;
+      border-radius:999px;
+      padding:6px 12px;
+      color:#c1ccec;
+      font-size:13px;
+    }
+    .backlink{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .lang{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .lang button{
+      appearance:none;
+      border:1px solid #21325b;
+      background:#122143;
+      color:#e8eefc;
+      padding:7px 11px;
+      border-radius:999px;
+      cursor:pointer;
+      font-size:13px;
+    }
+    .lang button[aria-pressed="true"]{
+      background:var(--accent);
+      color:#020815;
+      border-color:transparent;
+      font-weight:700;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      border:1px solid #1d2946;
+      padding:24px 22px 22px;
+      box-shadow:var(--shadow);
+      margin-bottom:16px;
+    }
+    h1{
+      margin:0 0 6px;
+      font-size:30px;
+      letter-spacing:.4px;
+    }
+    h2{
+      margin:22px 0 8px;
+      font-size:20px;
+    }
+    h3{
+      margin:16px 0 6px;
+      font-size:16px;
+    }
+    .muted{color:var(--muted);}
+    .section-tag{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+      margin-bottom:4px;
+    }
+    .list{
+      display:grid;
+      gap:8px;
+      margin:8px 0;
+    }
+    .chip{
+      display:block;
+      background:var(--chip);
+      border-radius:18px;
+      border:1px solid #1d2946;
+      padding:10px 12px;
+      font-size:14px;
+      color:#cfe0ff;
+    }
+    .foot{
+      font-size:12px;
+      color:var(--muted);
+      margin-top:18px;
+      opacity:.85;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:9px 15px;
+      border-radius:999px;
+      border:1px solid #21325b;
+      background:#122143;
+      color:#e8eefc;
+      font-size:14px;
+      cursor:pointer;
+      text-decoration:none;
+      margin-top:10px;
+    }
+    .btn.primary{
+      background:var(--accent);
+      color:#020815;
+      border-color:transparent;
+      font-weight:700;
+    }
+    @media (max-width:860px){
+      h1{font-size:26px;}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="badge">Concept Note - AISafetyCase.com</div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+        <a class="backlink" href="/">&larr; Back to main page</a>
+        <div class="lang" role="group" aria-label="Language toggle">
+          <button id="btn-en" aria-pressed="true" type="button">EN</button>
+          <button id="btn-fr" aria-pressed="false" type="button">FR</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= EN ================= -->
+    <section class="card" data-en>
+      <div class="section-tag">Concept Note</div>
+      <h1>AISafetyCase.com</h1>
+      <p class="muted">
+        This Concept Note provides a <b>neutral, descriptive framing</b> for the domain name <b>AISafetyCase.com</b>.
+        It outlines how the expression <b>“AI safety case”</b> can be used as a durable label for an
+        <b>inspection-ready</b> argument and evidence bundle supporting deployment decisions for <b>high-risk</b> and
+        <b>frontier</b> AI systems.
+      </p>
+      <p class="muted">
+        AISafetyCase.com is <b>not</b> a regulator, not a certification body, and not affiliated with any lab, standard setter,
+        or public authority. It does not issue approvals, ratings, seals, or compliance determinations. It is a descriptive digital asset.
+        Any future resource, template library, or observatory operating under this banner would be designed and governed solely by its acquirer.
+      </p>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">1. Definition</div>
+      <h2>What an AI safety case is</h2>
+      <p class="muted">
+        In safety-critical engineering, a safety case is designed to make a safety argument <b>explicit, reviewable, and evidence-backed</b>.
+        Applied to AI, an “AI safety case” can be described as a structured dossier that:
+      </p>
+      <div class="list">
+        <div class="chip"><b>States claims</b> about safety properties (what must hold in an operational context).</div>
+        <div class="chip"><b>Explains the argument</b> (why the claims are justified given assumptions and mitigations).</div>
+        <div class="chip"><b>Links evidence</b> (evaluations, red-teaming, monitoring plans, governance reviews, incident handling, security controls).</div>
+        <div class="chip"><b>Supports a decision</b> (go/no-go, staged release, scope restrictions, residual risk acceptance).</div>
+      </div>
+      <p class="muted">
+        This framing is intentionally <b>vendor-neutral</b> and focuses on the artifact a third party can inspect,
+        rather than any product or proprietary method.
+      </p>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">2. Structure</div>
+      <h2>Claims - Arguments - Evidence (CAE)</h2>
+      <p class="muted">
+        A common way to make a safety case inspectable is the CAE structure: <b>claims</b>, <b>arguments</b>, and <b>evidence</b>.
+        The goal is to prevent “trust by narrative” by forcing a traceable link from a claim to an argument strategy and to concrete evidence.
+      </p>
+      <div class="list">
+        <div class="chip"><b>Top claim:</b> the system is safe to deploy for a defined operational context and set of constraints.</div>
+        <div class="chip"><b>Sub-claims:</b> e.g., capability limits, misuse resistance, monitoring, governance, security, incident response.</div>
+        <div class="chip"><b>Argument strategy:</b> why the evidence is sufficient, what assumptions apply, and what residual risks remain.</div>
+        <div class="chip"><b>Evidence types:</b> test reports, red-team findings, eval suites, monitoring metrics, review minutes, controls, audits.</div>
+      </div>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">3. Inability arguments</div>
+      <h2>Why “inability” patterns matter</h2>
+      <p class="muted">
+        A particularly inspection-friendly pattern is the <b>inability argument</b>, which attempts to justify that a model cannot reliably perform
+        a prohibited harmful behavior (or cannot do so above a defined threshold) under specified conditions. This pattern is attractive because it:
+      </p>
+      <div class="list">
+        <div class="chip">Forces a precise definition of the prohibited behavior and the operational context.</div>
+        <div class="chip">Requires evidence that is measurable (evaluations, adversarial testing, monitoring and controls).</div>
+        <div class="chip">Makes residual risk explicit (assumptions, boundaries, and failure modes).</div>
+      </div>
+      <p class="muted">
+        AISafetyCase.com is intended to be a neutral banner where such patterns can be documented, referenced, and compared using authoritative sources.
+      </p>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">4. Governance and review</div>
+      <h2>Safety case reviews as a release gate</h2>
+      <p class="muted">
+        In frontier AI governance, the relevant question is often not “is there documentation?” but “is there a <b>reviewable</b> safety argument and evidence,
+        tied to a decision and a defined scope of deployment?” A safety case can serve as a shared object for:
+      </p>
+      <div class="list">
+        <div class="chip"><b>Pre-deployment review:</b> deciding conditions for release, staged rollout, capability restrictions, or monitoring requirements.</div>
+        <div class="chip"><b>Ongoing updates:</b> revising claims and evidence when models, data, or threat environments change.</div>
+        <div class="chip"><b>Third-party scrutiny:</b> enabling audit, procurement assessment, and insurer/risk review without implying certification.</div>
+      </div>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">5. Not a model card</div>
+      <h2>Descriptive reporting vs decision-grade argument</h2>
+      <p class="muted">
+        A model card (or similar reporting artifact) is typically <b>descriptive</b>: what the model is, how it was trained, and broad limitations.
+        A safety case is <b>decision-grade</b>: why it is acceptable to deploy the system in a defined context, supported by explicit arguments and evidence.
+      </p>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">6. Dynamic safety cases</div>
+      <h2>Durability requires updates</h2>
+      <p class="muted">
+        For long-lived systems, a safety case cannot be a one-off PDF. It must support updates as models, mitigations, evaluation suites, incidents,
+        and operational contexts evolve. A “dynamic safety case” approach strengthens durability by treating the safety case as a managed artifact:
+      </p>
+      <div class="list">
+        <div class="chip">Versioned claims and evidence, with traceability and change control.</div>
+        <div class="chip">Explicit triggers for updates (model changes, new threats, incidents, capability discoveries).</div>
+        <div class="chip">Clear status labeling (draft, reviewed, superseded) without implying approval or certification.</div>
+      </div>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">7. Prudent mappings</div>
+      <h2>Speaking the language of risk frameworks</h2>
+      <p class="muted">
+        Without claiming compliance, an AI safety case can map to the language buyers already use:
+      </p>
+      <div class="list">
+        <div class="chip"><b>NIST AI RMF:</b> governance and risk management functions (govern, map, measure, manage).</div>
+        <div class="chip"><b>EU AI Act documentation:</b> technical documentation expectations for high-risk systems (structure for assessability).</div>
+        <div class="chip"><b>ISO/IEC 42001:</b> AI management system vocabulary (governance, accountability, lifecycle controls).</div>
+      </div>
+      <p class="muted">
+        The intent is interoperability of language, not to claim legal status or certification.
+      </p>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">8. References</div>
+      <h2>Authoritative sources (selected)</h2>
+      <p class="muted">
+        References are provided for factual grounding and terminology only. AISafetyCase.com is not affiliated with any of these organisations.
+      </p>
+      <div class="list">
+        <div class="chip"><a href="https://www.aisi.gov.uk/blog/safety-cases-at-aisi" target="_blank" rel="noopener">AI Security Institute - Safety cases at AISI</a></div>
+        <div class="chip"><a href="https://www.aisi.gov.uk/blog/safety-case-template-for-inability-arguments" target="_blank" rel="noopener">AISI - Safety case template for “inability” arguments</a></div>
+        <div class="chip"><a href="https://deepmind.google/blog/strengthening-our-frontier-safety-framework/" target="_blank" rel="noopener">Google DeepMind - Strengthening our Frontier Safety Framework</a></div>
+        <div class="chip"><a href="https://alignment.anthropic.com/2024/safety-cases/" target="_blank" rel="noopener">Anthropic - Safety case components (ASL-4 sketches)</a></div>
+        <div class="chip"><a href="https://arxiv.org/abs/2410.21572" target="_blank" rel="noopener">arXiv - Safety cases for frontier AI</a></div>
+        <div class="chip"><a href="https://arxiv.org/abs/2412.17618" target="_blank" rel="noopener">arXiv - Dynamic safety cases for frontier AI</a></div>
+        <div class="chip"><a href="https://www.asems.mod.uk/definitions/safety-case" target="_blank" rel="noopener">ASEMS (UK MOD) - Safety case definition (heritage)</a></div>
+        <div class="chip"><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noopener">NIST - AI Risk Management Framework 1.0</a></div>
+        <div class="chip"><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-11" target="_blank" rel="noopener">EU AI Act Service Desk - Article 11 technical documentation</a></div>
+        <div class="chip"><a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener">ISO/IEC 42001 - AI management systems</a></div>
+      </div>
+    </section>
+
+    <section class="card" data-en>
+      <div class="section-tag">9. Acquisition</div>
+      <h2>Focused on the domain name only</h2>
+      <p class="muted">
+        A typical acquisition process: <b>contact and NDA - strategic discussion - formal offer - escrow - domain transfer</b>.
+        Unless explicitly agreed otherwise, the transaction covers only the <b>AISafetyCase.com</b> domain name.
+      </p>
+      <a class="btn primary"
+         href="mailto:contact@aisafetycase.com?subject=AISafetyCase.com%20-%20Acquisition%20enquiry">
+        Submit an offer / Request NDA
+      </a>
+      <p class="foot muted">
+        © AISafetyCase.com - descriptive digital asset. No affiliation with AISI, DeepMind, Anthropic, the UK Government, the European Union,
+        ISO, NIST, or any public authority or private company. No legal, regulatory, safety, audit or investment advice. Contact:
+        <a href="mailto:contact@aisafetycase.com">contact@aisafetycase.com</a>
+      </p>
+    </section>
+
+    <!-- ================= FR ================= -->
+    <section class="card" data-fr hidden>
+      <div class="section-tag">Concept Note</div>
+      <h1>AISafetyCase.com</h1>
+      <p class="muted">
+        Cette concept note propose un <b>cadrage neutre et descriptif</b> pour le nom de domaine <b>AISafetyCase.com</b>.
+        Elle explique comment l’expression <b>« AI safety case »</b> peut servir d’étiquette durable pour un dossier
+        <b>prêt pour inspection</b> (argument + preuves) soutenant des décisions de déploiement d’IA <b>à haut risque</b>
+        et d’IA <b>frontière</b>.
+      </p>
+      <p class="muted">
+        AISafetyCase.com n’est <b>pas</b> un régulateur, ni un organisme de certification, et n’est affilié à aucun laboratoire,
+        organisme de normalisation ou autorité publique. Il ne délivre aucune approbation, notation, label ou constat de conformité.
+        C’est un actif numérique descriptif. Tout hub, bibliothèque de templates ou observatoire opéré sous cette bannière serait conçu
+        et gouverné uniquement par son acquéreur.
+      </p>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">1. Définition</div>
+      <h2>Ce qu’est une AI safety case</h2>
+      <p class="muted">
+        En ingénierie safety-critical, une safety case vise à rendre un argumentaire <b>explicite, révisable et fondé sur des preuves</b>.
+        Appliquée à l’IA, une « AI safety case » peut être décrite comme un dossier structuré qui :
+      </p>
+      <div class="list">
+        <div class="chip"><b>Énonce des affirmations</b> de sûreté/sécurité (ce qui doit être vrai dans un contexte opérationnel).</div>
+        <div class="chip"><b>Décrit l’argumentation</b> (pourquoi les affirmations sont justifiées compte tenu des hypothèses et mitigations).</div>
+        <div class="chip"><b>Relie des preuves</b> (évaluations, red-teaming, monitoring, gouvernance, incidents, contrôles sécurité).</div>
+        <div class="chip"><b>Soutient une décision</b> (go/no-go, déploiement progressif, restrictions de périmètre, acceptation de risque résiduel).</div>
+      </div>
+      <p class="muted">
+        Ce cadrage est volontairement <b>vendor-neutral</b> et se concentre sur l’artefact inspectable par un tiers, pas sur un produit.
+      </p>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">2. Structure</div>
+      <h2>Claims - Arguments - Evidence (CAE)</h2>
+      <p class="muted">
+        Une façon classique de rendre une safety case inspectable est la structure CAE : <b>claims</b>, <b>arguments</b>, <b>evidence</b>.
+        L’objectif est d’éviter la “confiance par narration” en imposant une traçabilité d’une claim vers une stratégie d’argument et des preuves concrètes.
+      </p>
+      <div class="list">
+        <div class="chip"><b>Claim principale :</b> déploiement acceptable pour un contexte opérationnel défini et des contraintes explicites.</div>
+        <div class="chip"><b>Sous-claims :</b> limites de capacités, résistance aux abus, monitoring, gouvernance, sécurité, gestion d’incidents.</div>
+        <div class="chip"><b>Stratégie d’argument :</b> suffisance des preuves, hypothèses, limites et risques résiduels.</div>
+        <div class="chip"><b>Types de preuves :</b> rapports de tests, red-team, suites d’éval, plans de monitoring, comptes-rendus de revue, contrôles.</div>
+      </div>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">3. Inability arguments</div>
+      <h2>Pourquoi ces patterns comptent</h2>
+      <p class="muted">
+        Un pattern particulièrement “inspection-friendly” est l’<b>inability argument</b>, qui cherche à justifier qu’un modèle ne peut pas réaliser
+        de manière fiable un comportement interdit (ou pas au-delà d’un seuil), sous des conditions spécifiées. Ce pattern est attractif car il :
+      </p>
+      <div class="list">
+        <div class="chip">Force une définition précise du comportement interdit et du contexte opérationnel.</div>
+        <div class="chip">Exige des preuves mesurables (évaluations, tests adversariaux, monitoring, contrôles).</div>
+        <div class="chip">Rend explicite le risque résiduel (hypothèses, frontières, modes de défaillance).</div>
+      </div>
+      <p class="muted">
+        AISafetyCase.com vise à être une bannière neutre pour documenter, référencer et comparer ces patterns à partir de sources autoritatives.
+      </p>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">4. Gouvernance et revue</div>
+      <h2>Safety case reviews comme “release gate”</h2>
+      <p class="muted">
+        En gouvernance des IA frontière, la question clé n’est souvent pas “y a-t-il de la documentation ?” mais “y a-t-il un argumentaire
+        <b>révisable</b>, appuyé par des preuves, lié à une décision et à un périmètre de déploiement défini ?”.
+      </p>
+      <div class="list">
+        <div class="chip"><b>Revue pré-déploiement :</b> conditions de release, déploiement par paliers, restrictions, exigences de monitoring.</div>
+        <div class="chip"><b>Mises à jour continues :</b> révision des claims et preuves quand le modèle, les menaces ou le contexte changent.</div>
+        <div class="chip"><b>Scrutin tiers :</b> permettre audit, achats, assureur/risque, sans suggérer une certification.</div>
+      </div>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">5. Pas une model card</div>
+      <h2>Documentation descriptive vs argumentaire décisionnel</h2>
+      <p class="muted">
+        Une model card (ou équivalent) est généralement <b>descriptive</b>. Une safety case est <b>décisionnelle</b> :
+        elle justifie pourquoi il est acceptable de déployer dans un contexte défini, via arguments et preuves.
+      </p>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">6. Dynamic safety cases</div>
+      <h2>La durabilité implique des mises à jour</h2>
+      <p class="muted">
+        Pour des systèmes durables, une safety case ne peut pas être un PDF figé. Elle doit supporter des mises à jour au fil des évolutions
+        (modèle, mitigations, évaluations, incidents, contexte). Une approche “dynamic safety case” renforce la durabilité en traitant la safety case
+        comme un artefact géré :
+      </p>
+      <div class="list">
+        <div class="chip">Claims et preuves versionnées, traçabilité et contrôle de changements.</div>
+        <div class="chip">Déclencheurs explicites de mise à jour (changement modèle, nouvelles menaces, incidents, découvertes de capacités).</div>
+        <div class="chip">Statuts clairs (draft, reviewed, superseded) sans suggérer une approbation officielle.</div>
+      </div>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">7. Mappings prudents</div>
+      <h2>Parler la langue des cadres de risque</h2>
+      <p class="muted">
+        Sans revendiquer une conformité, une safety case IA peut se mapper à la langue utilisée par les acheteurs :
+      </p>
+      <div class="list">
+        <div class="chip"><b>NIST AI RMF :</b> fonctions de gouvernance et gestion du risque (govern, map, measure, manage).</div>
+        <div class="chip"><b>EU AI Act :</b> logique de documentation technique pour systèmes à haut risque (structure “assessable”).</div>
+        <div class="chip"><b>ISO/IEC 42001 :</b> vocabulaire des systèmes de management IA (gouvernance, responsabilité, contrôles lifecycle).</div>
+      </div>
+      <p class="muted">
+        Objectif : interopérabilité de langage, pas revendication de statut légal ou de certification.
+      </p>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">8. Références</div>
+      <h2>Sources autoritatives (sélection)</h2>
+      <p class="muted">
+        Références fournies à titre de fondement factuel et terminologique. Aucune affiliation avec ces organisations.
+      </p>
+      <div class="list">
+        <div class="chip"><a href="https://www.aisi.gov.uk/blog/safety-cases-at-aisi" target="_blank" rel="noopener">AI Security Institute - Safety cases at AISI</a></div>
+        <div class="chip"><a href="https://www.aisi.gov.uk/blog/safety-case-template-for-inability-arguments" target="_blank" rel="noopener">AISI - Template “inability arguments”</a></div>
+        <div class="chip"><a href="https://deepmind.google/blog/strengthening-our-frontier-safety-framework/" target="_blank" rel="noopener">Google DeepMind - Frontier Safety Framework</a></div>
+        <div class="chip"><a href="https://alignment.anthropic.com/2024/safety-cases/" target="_blank" rel="noopener">Anthropic - Safety case components</a></div>
+        <div class="chip"><a href="https://arxiv.org/abs/2410.21572" target="_blank" rel="noopener">arXiv - Safety cases for frontier AI</a></div>
+        <div class="chip"><a href="https://arxiv.org/abs/2412.17618" target="_blank" rel="noopener">arXiv - Dynamic safety cases for frontier AI</a></div>
+        <div class="chip"><a href="https://www.asems.mod.uk/definitions/safety-case" target="_blank" rel="noopener">ASEMS (UK MOD) - Safety case definition</a></div>
+        <div class="chip"><a href="https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf" target="_blank" rel="noopener">NIST - AI RMF 1.0</a></div>
+        <div class="chip"><a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-11" target="_blank" rel="noopener">EU AI Act Service Desk - Article 11</a></div>
+        <div class="chip"><a href="https://www.iso.org/standard/42001" target="_blank" rel="noopener">ISO/IEC 42001</a></div>
+      </div>
+    </section>
+
+    <section class="card" data-fr hidden>
+      <div class="section-tag">9. Acquisition</div>
+      <h2>Vente du domaine uniquement</h2>
+      <p class="muted">
+        Process type : <b>contact et NDA - échange stratégique - offre formelle - escrow - transfert</b>.
+        Sauf accord explicite, la transaction couvre uniquement le nom de domaine <b>AISafetyCase.com</b>.
+      </p>
+      <a class="btn primary"
+         href="mailto:contact@aisafetycase.com?subject=AISafetyCase.com%20-%20Demande%20d%27acquisition">
+        Soumettre une offre / Demander un NDA
+      </a>
+      <p class="foot muted">
+        © AISafetyCase.com - actif numérique descriptif. Aucune affiliation avec AISI, DeepMind, Anthropic, le gouvernement UK, l’Union européenne,
+        ISO, NIST, ou toute autorité publique / entreprise privée. Aucun avis juridique, réglementaire, safety, audit ou investissement. Contact :
+        <a href="mailto:contact@aisafetycase.com">contact@aisafetycase.com</a>
+      </p>
+    </section>
+  </div>
+
+  <script>
+    const frBtn = document.getElementById('btn-fr');
+    const enBtn = document.getElementById('btn-en');
+
+    function show(lang){
+      document.querySelectorAll('[data-fr]').forEach(n => n.hidden = (lang !== 'fr'));
+      document.querySelectorAll('[data-en]').forEach(n => n.hidden = (lang !== 'en'));
+      frBtn.setAttribute('aria-pressed', String(lang === 'fr'));
+      enBtn.setAttribute('aria-pressed', String(lang === 'en'));
+      document.documentElement.lang = lang;
+    }
+
+    frBtn.addEventListener('click', () => show('fr'));
+    enBtn.addEventListener('click', () => show('en'));
+
+    (function initLang(){
+      show('en');
+    })();
+  </script>
+</body>
+</html>
